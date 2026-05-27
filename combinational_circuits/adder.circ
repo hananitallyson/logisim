@@ -380,7 +380,7 @@
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="210" y="168">B′₀</text>
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="110" y="168">B′₂</text>
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="159" y="168">B′₁</text>
-      <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="231" y="159">C₂</text>
+      <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="229" y="159">C₁+₁</text>
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="63" y="150">Mₒᵤₜ</text>
       <circ-anchor facing="south" x="60" y="180"/>
       <circ-port dir="in" pin="320,120" x="60" y="120"/>
