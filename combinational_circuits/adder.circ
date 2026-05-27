@@ -11,7 +11,7 @@
   </lib>
   <lib desc="#Gates" name="1">
     <tool name="XOR Gate">
-      <a name="facing" val="south"/>
+      <a name="facing" val="west"/>
     </tool>
   </lib>
   <lib desc="#Plexers" name="2"/>
@@ -212,9 +212,10 @@
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="10" font-weight="bold" text-anchor="middle" x="131" y="164">B₂ A₂</text>
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="10" font-weight="bold" text-anchor="middle" x="82" y="164">B₃ A₃</text>
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="10" font-weight="bold" text-anchor="middle" x="233" y="190">Cᵢₙ</text>
-      <text dominant-baseline="central" font-family="Adwaita Sans" font-size="10" font-weight="bold" text-anchor="middle" x="79" y="190">Cₒᵤₜ</text>
+      <text dominant-baseline="central" font-family="Adwaita Sans" font-size="10" font-weight="bold" text-anchor="middle" x="92" y="191">Cₒᵤₜ MSB</text>
       <rect height="29" stroke="#000000" width="190" x="60" y="118"/>
       <text dominant-baseline="central" fill="#ffffff" font-family="Adwaita Sans" font-size="12" font-weight="bold" text-anchor="middle" x="155" y="132">Nibble Full Adder</text>
+      <text dominant-baseline="central" font-family="Adwaita Sans" font-size="10" font-weight="bold" text-anchor="middle" x="90" y="220">Cᵢₙ MSB</text>
       <circ-anchor facing="west" x="60" y="190"/>
       <circ-port dir="in" pin="420,110" x="90" y="150"/>
       <circ-port dir="in" pin="420,140" x="70" y="150"/>
@@ -225,12 +226,17 @@
       <circ-port dir="in" pin="580,110" x="240" y="150"/>
       <circ-port dir="in" pin="580,140" x="220" y="150"/>
       <circ-port dir="in" pin="650,230" x="250" y="190"/>
+      <circ-port dir="out" pin="150,160" x="60" y="220"/>
       <circ-port dir="out" pin="260,320" x="80" y="260"/>
       <circ-port dir="out" pin="290,320" x="130" y="260"/>
       <circ-port dir="out" pin="320,320" x="180" y="260"/>
       <circ-port dir="out" pin="350,320" x="230" y="260"/>
       <circ-port dir="out" pin="50,230" x="60" y="190"/>
     </appear>
+    <comp lib="0" loc="(150,160)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="type" val="output"/>
+    </comp>
     <comp lib="0" loc="(260,320)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
@@ -308,9 +314,12 @@
     <comp loc="(70,270)" name="full_adder">
       <a name="facing" val="west"/>
     </comp>
-    <wire from="(160,230)" to="(200,230)"/>
+    <wire from="(150,160)" to="(170,160)"/>
+    <wire from="(160,230)" to="(170,230)"/>
     <wire from="(160,250)" to="(190,250)"/>
     <wire from="(160,270)" to="(180,270)"/>
+    <wire from="(170,160)" to="(170,230)"/>
+    <wire from="(170,230)" to="(200,230)"/>
     <wire from="(180,140)" to="(180,270)"/>
     <wire from="(180,140)" to="(420,140)"/>
     <wire from="(190,110)" to="(190,250)"/>
@@ -375,13 +384,13 @@
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="110" y="130">B₂</text>
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="160" y="130">B₁</text>
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="210" y="130">B₀</text>
-      <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="230" y="140">Mᵢₙ</text>
+      <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="233" y="140">M</text>
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="60" y="168">B′₃</text>
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="210" y="168">B′₀</text>
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="110" y="168">B′₂</text>
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="159" y="168">B′₁</text>
       <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="229" y="159">C₁+₁</text>
-      <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="63" y="150">Mₒᵤₜ</text>
+      <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="58" y="150">M</text>
       <circ-anchor facing="south" x="60" y="180"/>
       <circ-port dir="in" pin="320,120" x="60" y="120"/>
       <circ-port dir="in" pin="400,120" x="110" y="120"/>
@@ -476,15 +485,45 @@
     <wire from="(640,170)" to="(640,280)"/>
     <wire from="(640,170)" to="(650,170)"/>
   </circuit>
+  <circuit name="overflow_flag">
+    <a name="appearance" val="custom"/>
+    <a name="circuit" val="overflow_flag"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="clabelup" val="west"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <appear>
+      <rect fill="#ffffff" height="40" stroke="#000000" width="80" x="50" y="50"/>
+      <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="112" y="80">Cᵢₙ MSB</text>
+      <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="110" y="60">Cₒᵤₜ MSB</text>
+      <text dominant-baseline="central" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="61" y="70">Flag</text>
+      <rect height="11" stroke="#000000" width="80" x="50" y="37"/>
+      <text dominant-baseline="central" fill="#ffffff" font-family="Adwaita Sans" font-size="8" font-weight="bold" text-anchor="middle" x="90" y="42">C2 Overflow Flag</text>
+      <circ-anchor facing="west" x="50" y="70"/>
+      <circ-port dir="in" pin="350,190" x="130" y="80"/>
+      <circ-port dir="in" pin="350,230" x="130" y="60"/>
+      <circ-port dir="out" pin="290,210" x="50" y="70"/>
+    </appear>
+    <comp lib="0" loc="(290,210)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(350,190)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+    </comp>
+    <comp lib="0" loc="(350,230)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+    </comp>
+    <comp lib="1" loc="(290,210)" name="XOR Gate">
+      <a name="facing" val="west"/>
+    </comp>
+  </circuit>
   <circuit name="byte_adder_subtractor">
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="byte_adder_subtractor"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(190,330)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="type" val="output"/>
-    </comp>
     <comp lib="0" loc="(240,150)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="south"/>
@@ -585,6 +624,14 @@
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
     </comp>
+    <comp lib="0" loc="(90,330)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(90,380)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="type" val="output"/>
+    </comp>
     <comp lib="9" loc="(205,115)" name="Text">
       <a name="font" val="Adwaita Sans bold 15"/>
       <a name="text" val="A"/>
@@ -625,6 +672,7 @@
       <a name="font" val="Adwaita Sans bold 15"/>
       <a name="text" val="0"/>
     </comp>
+    <comp loc="(110,380)" name="overflow_flag"/>
     <comp loc="(220,330)" name="four_bit_adder">
       <a name="facing" val="west"/>
     </comp>
@@ -637,7 +685,12 @@
     <comp loc="(440,250)" name="operation_select">
       <a name="facing" val="south"/>
     </comp>
-    <wire from="(190,330)" to="(220,330)"/>
+    <wire from="(190,370)" to="(200,370)"/>
+    <wire from="(190,390)" to="(210,390)"/>
+    <wire from="(200,330)" to="(200,370)"/>
+    <wire from="(200,330)" to="(220,330)"/>
+    <wire from="(210,360)" to="(210,390)"/>
+    <wire from="(210,360)" to="(220,360)"/>
     <wire from="(230,160)" to="(230,190)"/>
     <wire from="(230,160)" to="(240,160)"/>
     <wire from="(230,250)" to="(230,290)"/>
@@ -718,5 +771,7 @@
     <wire from="(620,230)" to="(630,230)"/>
     <wire from="(620,330)" to="(630,330)"/>
     <wire from="(630,230)" to="(630,330)"/>
+    <wire from="(90,330)" to="(200,330)"/>
+    <wire from="(90,380)" to="(110,380)"/>
   </circuit>
 </project>
