@@ -78,7 +78,7 @@
       <text dominant-baseline="central" font-family="MartianMono NF" font-size="10" font-weight="bold" text-anchor="middle" x="370" y="354">B4</text>
       <text dominant-baseline="central" font-family="MartianMono NF" font-size="10" font-weight="bold" text-anchor="middle" x="475" y="301">SUB</text>
       <text dominant-baseline="central" font-family="MartianMono NF" font-size="10" font-weight="bold" text-anchor="middle" x="478" y="340">EU</text>
-      <text dominant-baseline="central" font-family="MartianMono NF" font-size="10" font-weight="bold" text-anchor="middle" x="285" y="320">Out</text>
+      <text dominant-baseline="central" font-family="MartianMono NF" font-size="10" font-weight="bold" text-anchor="middle" x="296" y="320">Out(8)</text>
       <rect fill="#ed7d31" height="20" stroke="#ed7d31" width="220" x="270" y="361"/>
       <text dominant-baseline="central" font-family="MartianMono NF" font-size="10" font-weight="bold" text-anchor="start" x="323" y="371">ADDER/SUBTRACTOR</text>
       <circ-anchor facing="west" x="270" y="320"/>
