@@ -23,12 +23,3 @@
 | Controller | Dark Red | #C00000 |
 | Clock | Purple | #7030A0 |
 | Bus/Wiring | Dark Gray | #7F7F7F |
-
-## Rules
-
-- Components should face the main bus.
-- Data flow should be left → right whenever possible.
-- Components of the same type must use the same color.
-- Only one component may drive the bus at a time.
-- Use tri-state buffers for bus outputs.
-
